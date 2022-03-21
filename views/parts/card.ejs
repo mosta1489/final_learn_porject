@@ -1,0 +1,33 @@
+<div class="product">
+  <div class="product-content">
+    <!-- ------------------------------------ -->
+    <% products.forEach(product=> { %>
+      <div class="port-col">
+        <div class="image">
+          <img src="<%= products.image %> " />
+        </div>
+        <div class="text">
+          <h3>
+            <a href="/product/<%= product._id %> ">
+              <%= product.title %>
+            </a>
+            <span> Price: <%= product.price %> $</span>
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            culpa dicta sapiente veritatis
+          </p>
+        </div>
+        <form class="form-cart" action="/cart">
+          <input type="number" name="amount" value="1">
+          <input type="submit" value="Add to cart">
+        </form>
+      </div>
+      <% }) %>
+
+
+        <!-- ------------------------------------ -->
+  </div>
+</div>
+</div>
