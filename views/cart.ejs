@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("parts/header.ejs") %>
+  <body>
+    <div class="container">
+      <%- include("parts/navbar.ejs") %>
+      <br />
+      <% items.forEach(product => { %>
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="<%= product.image %>"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= product.name %></h5>
+              <h6 class="card-title">price: <%= product.price %></h6>
+              <h6 class="card-title">amount: <%= product.amount %></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

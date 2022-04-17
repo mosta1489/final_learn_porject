@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const dbURL =
-  "mongodb+srv://mosta1489:mosta1489@cluster0.xh1an.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-
+const dbURL = "mongodb://localhost:27017/arabProject";
 function connection() {
   return mongoose.connect(dbURL);
 }
@@ -31,6 +29,57 @@ exports.getAllProduct = () => {
 
       .catch((err) => {
         reject(err);
+      });
+  });
+};
+
+exports.getProductByCategory = (category) => {
+  return new Promise((resolve, reject) => {
+    connection()
+      .then(async () => {
+        return await product.find({ category: category });
+      })
+      .then((product) => {
+        mongoose.disconnect();
+        resolve(product);
+      })
+
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+exports.getProductById = (id) => {
+  return new Promise((resolve, reject) => {
+    connection()
+      .then(async () => {
+        return await product.findById(id);
+      })
+      .then((product) => {
+        mongoose.disconnect();
+        resolve(product);
+      })
+
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+exports.addProduct = (newProduct) => {
+  return new Promise((resolve, reject) => {
+    connection()
+      .then(async () => {
+        const Product = new product(newProduct);
+        await Product.save();
+      })
+      .then(() => {
+        mongoose.disconnect();
+        resolve("product added successfully");
+      })
+      .catch((error) => {
+        reject(error);
       });
   });
 };

@@ -1,0 +1,51 @@
+<form action="/admin/addProduct" enctype="multipart/form-data" method="post">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <label for="">add img file: </label>
+        </td>
+        <td>
+          <input
+            class="file-uplode-input"
+            type="file"
+            onchange="readURL(this)"
+            accept="image/*"
+            name="image"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="">add the product name:</label>
+        </td>
+        <td><input type="text" name="name" /></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="">add the product price: </label>
+        </td>
+        <td><input type="number" name="price" />$</td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="">add some description: </label>
+        </td>
+        <td>
+          <textarea
+            name="descriptors"
+            cols="40"
+            rows="10"
+            placeholder="Describe your product..."
+          ></textarea>
+        </td>
+        <td>
+          <div class="btn">
+            <button type="submit">submit</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

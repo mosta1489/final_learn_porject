@@ -1,33 +1,165 @@
 <div class="product">
-  <div class="product-content">
-    <!-- ------------------------------------ -->
-    <% products.forEach(product=> { %>
-      <div class="port-col">
-        <div class="image">
-          <img src="<%= products.image %> " />
+  <!-- --------------------------------- -->
+  <!-- <div class="row">
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/img(1).jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-title">Card price</h6>
+          <form action="/cart">
+            <input class="form-control form-control-lg" type="number" value="1">
+            <input class="btn btn-primary" type="submit" name="" value="Add to cart">
+          </form>
         </div>
-        <div class="text">
-          <h3>
-            <a href="/product/<%= product._id %> ">
-              <%= product.title %>
-            </a>
-            <span> Price: <%= product.price %> $</span>
-          </h3>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            culpa dicta sapiente veritatis
-          </p>
-        </div>
-        <form class="form-cart" action="/cart">
-          <input type="number" name="amount" value="1">
-          <input type="submit" value="Add to cart">
-        </form>
       </div>
-      <% }) %>
-
-
-        <!-- ------------------------------------ -->
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/img(2).jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-title">Card price</h6>
+          <form action="/cart">
+            <input class="form-control form-control-lg" type="number" value="1">
+            <input class="btn btn-primary" type="submit" name="" value="Add to cart">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/img(3).jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-title">Card price</h6>
+          <form action="/cart">
+            <input class="form-control form-control-lg" type="number" value="1">
+            <input class="btn btn-primary" type="submit" name="" value="Add to cart">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- --------------------------------- -->
+  <!-- <div class="row">
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="/images/img(4).jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-title">Card price</h6>
+          <form action="/cart">
+            <input
+              class="form-control form-control-lg"
+              type="number"
+              value="1"
+            />
+            <input
+              class="btn btn-primary"
+              type="submit"
+              name=""
+              value="Add to cart"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="/images/img(5).jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-title">Card price</h6>
+          <form action="/cart">
+            <input
+              class="form-control form-control-lg"
+              type="number"
+              value="1"
+            />
+            <input
+              class="btn btn-primary"
+              type="submit"
+              name=""
+              value="Add to cart"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="/images/img(6).jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-title">Card price</h6>
+          <form action="/cart">
+            <input
+              class="form-control form-control-lg"
+              type="number"
+              value="1"
+            />
+            <input
+              class="btn btn-primary"
+              type="submit"
+              name=""
+              value="Add to cart"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- --------------------------------- -->
+  <div class="row">
+    <% products.forEach(product=> { %>
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <a href="/product/<%= product._id %> ">
+          <img
+            class="card-img-top"
+            src="<%= product.image %> "
+            alt="Card image cap"
+          />
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <h6 class="card-title"><%= product.price %></h6>
+          <form action="/cart" method="post">
+            <input
+              class="form-control form-control-lg"
+              type="number"
+              value="1"
+              name="amount"
+              min="1"
+            />
+            <input type="hidden" name="name" value="<%= product.name %> " />
+            <input type="hidden" name="price" value="<%= product.price %> " />
+            <input type="hidden" name="id" value="<%= product._id %> " />
+            <input type="hidden" name="image" value="<%= product.image %> " />
+            <input type="hidden" name="currentPath" value="/" />
+            <input
+              class="btn btn-primary"
+              type="submit"
+              name=""
+              value="Add to cart"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <% }) %>
   </div>
-</div>
 </div>

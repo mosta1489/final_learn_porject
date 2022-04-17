@@ -1,9 +1,112 @@
-<div class="topnav">
-  <a class="active" href="/">Home</a>
-  <a href="/cart">Cart</a>
-  <a href="/orders">Orders</a>
-  <a href="/login">Login</a>
-  <a href="/signal">Signup</a>
-  <a href="/add">Add</a>
-  <a href="/orders">m-orders</a>
-</div>
+<body>
+  <div class="btn btn-nav click"><span class="fas fa-bars"></span></div>
+  <nav class="sidebar show">
+    <div class="text">BBBootstrap.com</div>
+    <ul class="main_side">
+      <li class="active"><a href="#">Dashboard</a></li>
+      <li>
+        <a href="#" id="1">Pages <span class="fas fa-caret-down"></span> </a>
+        <ul class="item-show-1">
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Team</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" id="2">Services <span class="fas fa-caret-down"></span> </a>
+        <ul class="item-show-2">
+          <li><a href="#">App Design</a></li>
+          <li><a href="#">Web Design</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Users</a></li>
+      <li><a href="#">Message</a></li>
+      <li><a href="#">Bookmark</a></li>
+      <li><a href="#">Files</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <div class="header">Main content goes here</div>
+  </div>
+  <!-- -------------------------------------- -->
+  <!-- -------------------------------------- -->
+  <!-- -------------------------------------- -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+      <form
+        action="/"
+        method="get"
+        class="form-inline"
+        style="margin-left: 300px"
+      >
+        <select name="category" class="form-control" style="display: block">
+          <option value="all">All</option>
+          <option value="shoes">Shoes</option>
+          <option value="phones">Phones</option>
+          <option value="computers">Computers</option>
+        </select>
+        <button
+          style="margin-left: 300px"
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="submit"
+        >
+          Filter
+        </button>
+      </form>
+    </div>
+    <form class="form-inline">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+    <% if (isUser) { %>
+
+    <form action="/login/logout" method="post">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        logout
+      </button>
+    </form>
+    <% } else{ %>
+
+    <a href="/login">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Login
+      </button>
+    </a>
+
+    <% } %>
+  </nav>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(".btn").click(function () {
+      $(this).toggleClass("click");
+      $(".sidebar").toggleClass("show");
+    });
+
+    $(".sidebar ul li a").click(function () {
+      var id = $(this).attr("id");
+      $("nav ul li ul.item-show-" + id).toggleClass("show");
+      $("nav ul li #" + id + " span").toggleClass("rotate");
+    });
+
+    $("nav ul li").click(function () {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+  </script>
+</body>
