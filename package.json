@@ -1,8 +1,36 @@
 {
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mdb-ui-kit": "^3.11.0",
     "mongoose": "^6.2.7",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15"
-  }
+  },
+  "name": "final_test_porject",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosta1489/final_test_porject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mosta1489/final_test_porject/issues"
+  },
+  "homepage": "https://github.com/mosta1489/final_test_porject#readme"
 }
